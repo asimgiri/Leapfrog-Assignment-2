@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <script src="https://kit.fontawesome.com/2bc9b664dd.js" crossorigin="anonymous"></script>
 
     <title>Edit Profile Tabbed</title>
 </head>
@@ -34,6 +37,22 @@
                 <img src="./assets/img/Vector1.png" alt="" class="arrow_down">
             </div>
         </section>
+        <div class="hamburger" onclick="menuToggler()">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-bars"></i>
+        </div>
+        <section class="mobile_menu">
+            <div>
+                <a href="">
+                    <h2 class="logo mb-1">Signal</h2>
+                </a>
+            </div>
+            <ul>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Data Library</a></li>
+                <li><a href="" class="text_gray">Insights Gallery</a></li>
+            </ul>
+        </section>
         <section class="main">
             <section class="menu">
                 <div>
@@ -42,7 +61,7 @@
                             <img src="./assets/img/user.png" alt="" width="100%" height="100%">
                         </div>
                         <p>Ryan <br /><span class="small text_gray">Admin</span></p>
-                        <p class="small"><a href="" class="text_primary">Logout</a></p>
+                        <p class="small logout"><a href="" class="text_primary">Logout</a></p>
                     </div>
                     <ul>
                         <li class="active"><a href="">Edit Profile</a></li>
@@ -55,14 +74,15 @@
             <section class="content">
                 <h2 class="title mb-2">Edit Profile</h2>
                 <form action="">
-                    <div class="row mb-2">
+                    <div class="row mb-1">
                         <div class="col">
                             <p class="text_gray">First Name</p>
-                            <input type="text" placeholder="Mark">
+                            <input type="text" placeholder="Mark" id="firstname" name="firstname">
+                            <p class="small text_danger">This field is required!</p>
                         </div>
                         <div class="col">
                             <p class="text_gray">Last Name</p>
-                            <input type="text" placeholder="Smith">
+                            <input type="text" placeholder="Smith" id="lastname">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -101,13 +121,70 @@
                         </a>
                     </div>
                     <div>
-                        <a href=""><button class="btn_primary mr-2">Update Profile</button></a>
-                        <a href="" class="text_darkgray">Reset</a>
+                        <a href=""><button onclick="onClickHandler()" id="submit" class="btn_primary mr-2">Update
+                                Profile</button></a>
+                        <a href="" class="text_darkgray" id="reset" onclick="reset()">Reset</a>
                     </div>
                 </form>
             </section>
         </section>
     </div>
 </body>
+
+<script>
+
+    function onClickHandler() {
+        let firstName = document.querySelector('#firstname').value;
+        console.log(firstName);
+
+        if (firstName === "") {
+            document.querySelector('#firstname').style.borderColor = '#f00';
+            document.body.querySelector('#firstname').focus();
+            document.querySelector('.text_danger').style.visibility = "visible";
+        }
+        else {
+            document.querySelector('#firstname').style.borderColor = '#dfdfdf';
+            alert('Form submitted.');
+        }
+    }
+
+    function reset() {
+        document.querySelector('#firstname').value = "";
+    }
+
+    document.querySelector('#firstname').addEventListener('input', () => {
+        document.querySelector('#firstname').style.borderColor = '#dfdfdf';
+        document.querySelector('.text_danger').style.visibility = "hidden";
+
+    })
+
+    document.querySelector('#submit').addEventListener('click', (event) => {
+        event.preventDefault();
+    })
+
+    document.querySelector('#reset').addEventListener('click', (event) => {
+        event.preventDefault();
+    })
+
+    function menuToggler() {
+
+        document.querySelector('.hamburger').addEventListener('click', () => {
+
+            if (document.querySelector('.mobile_menu').style.display === "none") {
+                document.querySelector('.mobile_menu').style.display = "block";
+                document.querySelector('.fa-times').style.display = "block";
+                document.querySelector('.fa-bars').style.display = "none";
+
+            }
+            else {
+                document.querySelector('.mobile_menu').style.display = "none";
+                document.querySelector('.fa-times').style.display = "none";
+                document.querySelector('.fa-bars').style.display = "block";
+            }
+        })
+    }
+
+
+</script>
 
 </html>

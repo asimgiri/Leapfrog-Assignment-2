@@ -1,0 +1,49 @@
+@media only screen and (max-width: 600px) {
+    .header {
+        display: none;
+    }
+    .menu {
+        padding-top: 0;
+    }
+    .menu div {
+        width: 90%;
+        float: none;
+        margin: auto;
+    }
+    .menu div div {
+        flex-direction: column;
+    }
+    .menu div div p:nth-child(2) {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .menu div div .text_gray {
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+    .menu div div .logout {
+        position: absolute;
+        right: 25%;
+    }
+    .menu ul {
+        margin-top: 1.5rem;
+    }
+    .main {
+        display: block;
+    }
+    form {
+        width: 100%;
+    }
+    form .row {
+        display: block;
+    }
+    form input {
+        width: 100%;
+    }
+    .mobile_menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+}

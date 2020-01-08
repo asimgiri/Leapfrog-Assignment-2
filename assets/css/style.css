@@ -48,6 +48,7 @@ button {
     position: fixed;
     width: 100%;
     border-bottom: 1px solid #dfdfdf;
+    z-index: 999;
 }
 
 .main {
@@ -69,6 +70,11 @@ button {
     padding: 2rem;
 }
 
+.text_danger {
+    color: #f00 !important;
+    visibility: hidden;
+}
+
 .text_darkgray {
     color: #444 !important;
 }
@@ -79,6 +85,10 @@ button {
 
 .text_primary {
     color: #003BDE;
+}
+
+.mb-1 {
+    margin-bottom: 1.2rem;
 }
 
 .mb-2 {
@@ -156,7 +166,7 @@ button {
 }
 
 .menu div ul li:hover {
-    background: rgba(0, 59, 222, .1);
+    background: rgba(0, 59, 222, .026);
 }
 
 .menu div ul li a {
@@ -191,7 +201,7 @@ button {
 }
 
 .menu div div p:nth-child(2) {
-    margin-left: -25%;
+    margin-left: -20%;
 }
 
 .small {
@@ -278,3 +288,27 @@ form .small2 {
 }
 
 /* ------------------------- content --------------------------------- */
+
+.mobile_menu {
+    display: none;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 2rem;
+}
+
+.mobile_menu ul li {
+    padding: .6rem 0;
+}
+
+.hamburger {
+    z-index: 99;
+    position: absolute;
+    background: rgba(0, 59, 222, .1);
+    padding: 1rem;
+    right: 0;
+    display: none;
+}
+
+.hamburger .fa-bars{
+    display: none;
+}
