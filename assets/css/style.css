@@ -309,6 +309,10 @@ form .small2 {
     display: none;
 }
 
+.hamburger i{
+    color: #003BDE;
+}
+
 .hamburger .fa-bars{
     display: none;
 }

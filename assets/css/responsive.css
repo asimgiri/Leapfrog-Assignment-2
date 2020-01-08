@@ -47,3 +47,15 @@
         display: block;
     }
 }
+
+@media only screen and (max-width: 1024px){
+    .header ul{
+        margin-left: 0;
+    }
+    .menu div{
+        width: 90%;
+    }
+    form{
+        width: 100%;
+    }
+}
