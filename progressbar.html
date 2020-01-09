@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Custom Progress Bar</title>
+</head>
+
+<body>
+    <button class="btn_primary toggle_progress" onclick="onClickHandler()">Reload</button>
+</body>
+
+<script>
+    const label = document.createElement('p');
+    label.innerText = "Completed!";
+    label.style.position = "absolute";
+    label.style.top = "45%";
+    label.style.left = "50%";
+    label.style.transform = "translate(-50%, -50%)";
+    label.style.display = "none";
+
+    const bar = document.createElement('div');
+    bar.style.width = "60%";
+    bar.style.height = "34px";
+    bar.style.background = "#dfdfdf";
+    bar.style.borderRadius = ".3rem";
+    bar.style.position = "absolute";
+    bar.style.top = "50%";
+    bar.style.left = "50%";
+    bar.style.transform = "translate(-50%, -50%)";
+    bar.style.overflow = "hidden";
+
+    const progress = document.createElement('div');
+    progress.style.background = "#61D079";
+    progress.style.width = "0";
+    progress.style.height = "100%";
+    progress.style.borderTopLeftRadius = ".3rem";
+    progress.style.borderBottomLeftRadius = ".3rem";
+    progress.style.transition = "all .5s linear";
+
+    bar.appendChild(progress);
+    document.body.appendChild(label);
+    document.body.appendChild(bar);
+
+
+    window.addEventListener('load', () => {
+        let p = 0
+        setInterval(() => {
+            p = p + 10;
+            progress.style.width = `${p}%`
+            if (p === 120) {
+                label.style.display = "block";
+            }
+        }, 400)
+    })
+
+    onClickHandler = () => {
+        document.body.querySelector('.toggle_progress').addEventListener('click', () => {
+            location.reload();
+        })
+    }
+
+</script>
+
+</html>
