@@ -335,10 +335,6 @@ form .small2 {
     position: relative;
 }
 
-.tick:hover {
-    background: #dfdfdf;
-}
-
 .checkbox {
     display: flex;
     align-items: center;
@@ -415,4 +411,55 @@ form .small2 {
 
 .radio_container input:checked~.checkmark:after {
     display: block;
+}
+
+.parent {
+    background: #eee;
+    width: 48%;
+    height: 600px;
+    margin: 2rem;
+    position: relative;
+    padding: 12px;
+}
+
+.parent2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    margin: 2rem;
+    padding: 12px;
+    background: #ddd;
+}
+
+.first {
+    background: #a9a9a9;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.second {
+    background: #666;
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrap {
+    display: flex;
 }
