@@ -323,3 +323,33 @@ form .small2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.tick {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #dfdfdf;
+    margin-right: .5rem;
+    cursor: pointer;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fa-check {
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

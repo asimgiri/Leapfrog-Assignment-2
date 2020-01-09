@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="https://kit.fontawesome.com/2bc9b664dd.js" crossorigin="anonymous"></script>
+
+    <title>Custom Checkbox</title>
+</head>
+
+<body>
+    <div class="checkbox">
+        <div class="tick" onclick="onClickHandler()">
+            <div class="ok">
+                <i class="fas fa-check"></i>
+            </div>
+        </div>
+        <p>Accept our terms and conditons.</p>
+    </div>
+</body>
+
+<script>
+
+    onClickHandler = () => {
+        document.body.querySelector('.tick').addEventListener('click', () => {
+            if (document.body.querySelector('.ok').style.display === "block") {
+                document.body.querySelector('.ok').style.display = "none";
+                document.body.querySelector('.tick').style.background = "#fff";
+            }
+            else {
+                document.body.querySelector('.ok').style.display = "block";
+                document.body.querySelector('.tick').style.background = "rgba(48, 209, 83, 1)";
+            }
+        })
+    }
+
+</script>
+
+</html>
