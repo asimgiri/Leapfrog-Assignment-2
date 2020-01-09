@@ -335,6 +335,10 @@ form .small2 {
     position: relative;
 }
 
+.tick:hover {
+    background: #dfdfdf;
+}
+
 .checkbox {
     display: flex;
     align-items: center;
@@ -343,6 +347,7 @@ form .small2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    user-select: none;
 }
 
 .fa-check {
@@ -352,4 +357,62 @@ form .small2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.radios {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio_container {
+    display: block;
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+.radio_container input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.radio_container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: #dfdfdf;
+    border-radius: 50%;
+}
+
+.radio_container:hover .checkmark {
+    background-color: #ccc;
+}
+
+.radio_container input:checked~.checkmark {
+    background: rgba(48, 209, 83, 1);
+}
+
+.radio_container .checkmark:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio_container input:checked~.checkmark:after {
+    display: block;
 }
